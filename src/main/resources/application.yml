@@ -9,4 +9,12 @@ spring:
       hibernate:
         dialect: org.hibernate.dialect.MySQL8Dialect
     show-sql: true
+  springdoc:
+    swagger-ui:
+      path: /swagger-ui.html
+
+  security:
+    user:
+      name: user
+      password: 1234
 

@@ -6,6 +6,7 @@ plugins {
 	kotlin("jvm") version "1.6.21"
 	kotlin("plugin.spring") version "1.6.21"
 	kotlin("plugin.jpa") version "1.6.21"
+	id("org.springdoc.openapi-gradle-plugin") version "1.3.4"
 }
 
 group = "com.sample"
@@ -18,15 +19,24 @@ repositories {
 
 dependencies {
 	implementation("org.springframework.boot:spring-boot-starter-data-jpa")
-	//implementation("org.springframework.boot:spring-boot-starter-security")
+
 	implementation("org.springframework.boot:spring-boot-starter-web")
 	implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
 	implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
-	implementation("org.projectlombok:lombok:1.18.22")
+	implementation("org.springframework.boot:spring-boot-starter-aop")
+	implementation("org.springframework.boot:spring-boot-starter-aop")
+
+	implementation("org.springframework.boot:spring-boot-starter-security")
+
+	//스웨거를 위한 springdoc
+	implementation("org.springdoc:springdoc-openapi:1.6.9")
+	implementation("org.springdoc:springdoc-openapi-ui:1.6.9")
+
 	runtimeOnly("mysql:mysql-connector-java")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 	testImplementation("org.springframework.security:spring-security-test")
+
 }
 
 tasks.withType<KotlinCompile> {
